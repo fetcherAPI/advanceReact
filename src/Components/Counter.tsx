@@ -1,9 +1,7 @@
 import { useState } from "react"
-import './Counter.module.scss'
+import classes from './Counter.module.scss'
 
-type Props = {}
-
-export const Counter = (props: Props) => {
+export const Counter = () => {
 
   const[count, setCount] = useState<number>(0)
 
@@ -12,6 +10,6 @@ export const Counter = (props: Props) => {
   }
 
   return (
-    <h1   onClick={increment}>{count}</h1>
+    <h1  className={classes.counter}  onClick={increment}>{count}</h1>
   )
 }
