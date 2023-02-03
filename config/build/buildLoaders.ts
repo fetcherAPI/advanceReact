@@ -13,15 +13,15 @@ export const buildLoaders = (options: TBuildOptions): webpack.RuleSetRule[] => {
     test: /\.s[ac]ss$/i,
     use: [
       options.isDev ? 'style-loader' :  MiniCssExtractPlugin.loader,
-      // Creates `style` nodes from JS strings
-      // Translates CSS into CommonJS
-      "css-loader",
-      // Compiles Sass to CSS
+      {
+        loader: "css-loader",
+        options: {
+            modules: true,
+        }
+      },
       "sass-loader",
     ],
-    options: {
-      modules: true,
-    },
+
   };
 
   return [typescriptLoadres, styleLoaders];
