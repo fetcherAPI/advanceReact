@@ -1,5 +1,5 @@
 import { useState } from "react"
-import './Counter.scss'
+import './Counter.module.scss'
 
 type Props = {}
 
