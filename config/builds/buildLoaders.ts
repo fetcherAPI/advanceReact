@@ -16,7 +16,11 @@ export const buildLoaders = (options: TBuildOptions): webpack.RuleSetRule[] => {
       {
         loader: "css-loader",
         options: {
-            modules: true,
+            modules: {
+              auto: ((resPath: string) => resPath.includes('.module.scss')),
+              localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:5]' : "[hash:base64:5]"
+            },
+            
         }
       },
       "sass-loader",
