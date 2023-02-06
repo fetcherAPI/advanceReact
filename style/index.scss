@@ -3,10 +3,12 @@
 @import "themes/normal.scss";
 @import "themes/dark.scss";
 
-h1 {
-  color: red;
+.app {
+  font: var(--font-m);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
 }
 
-.app_title {
-  color: green;
-}
